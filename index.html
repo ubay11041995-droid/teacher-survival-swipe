@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Swipe de Supervivencia</title>
+    <!-- Modern Font: Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <!-- Background Elements for Glassmorphism -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <div id="app">
+      <!-- Start Screen -->
+      <section id="start-screen" class="screen active glass-card">
+        <h1 class="title-gradient">¿Lo tienes o no lo tienes?</h1>
+        <p class="subtitle">Frases de alumnos, familias y compañeros... ¿te suenan?</p>
+        <div class="instructions">
+          <p>Desliza a la <b>izquierda</b> si tienes la suerte de poder decir <em>"Yo NO"</em>.</p>
+          <p>Desliza a la <b>derecha</b> si lo has vivido y exclamas <em>"¡SÍ LO TENGO!"</em>.</p>
+          <p style="margin-top: 0.8rem; font-size: 0.85rem;">📚 Alumnos &nbsp;·&nbsp; 👨‍👩‍👦 Familias &nbsp;·&nbsp; 🧑‍🏫 Compañeros</p>
+        </div>
+        <button id="start-btn" class="glass-btn primary-btn">Empezar</button>
+      </section>
+
+      <!-- Game Screen -->
+      <section id="game-screen" class="screen">
+        <header class="glass-header">
+          <div class="score">
+            <span class="emoji">❌</span> NO: <span id="score-zen">0</span>
+          </div>
+          <div class="score">
+            <span class="emoji">✅</span> SÍ: <span id="score-cap">0</span>
+          </div>
+        </header>
+        
+        <div id="cards-container">
+          <!-- Cards injected via JS -->
+        </div>
+
+        <div class="controls-overlay">
+          <button id="btn-reject" class="control-btn glass-btn">👈 YO NO</button>
+          <button id="btn-accept" class="control-btn glass-btn">SÍ LO TENGO 👉</button>
+        </div>
+      </section>
+
+      <!-- Result Screen -->
+      <section id="result-screen" class="screen glass-card">
+        <h2 class="result-highlight">El diagnóstico de tu clase</h2>
+        <div id="result-emoji" class="emoji-huge"></div>
+        <h3 id="result-title" class="title-gradient"></h3>
+        <p id="result-desc"></p>
+        <button id="restart-btn" class="glass-btn primary-btn">Volver a jugar</button>
+      </section>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
